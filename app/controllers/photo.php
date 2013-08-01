@@ -10,9 +10,10 @@
 			if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 // загрузка файла
 				$img = getimagesize($_FILES['photo']['tmp_name']);
-				if($img['mime'] != 'image/jpeg') die('It is not JPEG file!');
+				if($img['mime'] != 'image/jpeg' && $img['mime'] != 'image/png') die('We accept only JPEG and PNG files!');
 				$up_dir = 'upload/';
-				$temp = time() . '.jpg';
+				if ($img['mime'] == 'image/jpeg') $temp = time() . '.jpg';
+				elseif ($img['mime'] == 'image/png') $temp = time() . '.png';
 				$up_file = $up_dir . $temp;
 				if (!is_uploaded_file($_FILES['photo']['tmp_name'])) dbg($_FILES['photo']['error']);
 				move_uploaded_file($_FILES['photo']['tmp_name'], $up_file);
