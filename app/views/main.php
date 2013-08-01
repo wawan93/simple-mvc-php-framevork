@@ -45,6 +45,7 @@
     
     <div class="bs-example">
       <div class="row">
+<?php if($images != NULL) : ?>
 <?php foreach($images as $v) : ?>
         <div class="col-lg-4">
           <div class="thumbnail">
@@ -58,6 +59,12 @@
           </div>
         </div>
 <?php endforeach; ?>
+<? else: ?>
+  <div class="alert alert-danger">
+    <p>Фотографий пока нет!</p>
+    <p>Можете <a href="/index.php?do=photo/upload">загрузить</a></p>
+  </div>
+<? endif; ?>
       </div>
     </div>
 
