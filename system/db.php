@@ -21,8 +21,8 @@ class Db {
 
 		$sql = array_shift($args);
 
-		$args = array_map(function($param) use ($db) {
-			return $db->escape_string($param);
+		$args = array_map(function($param) {
+			return $this->db->escape_string($param);
 		}, $args);
 
 		$sql = str_replace(array('%', '?'), array('%%', '%s'), $sql);
