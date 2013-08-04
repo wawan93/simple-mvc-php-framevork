@@ -9,10 +9,10 @@
     <title>Фотогалерея</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/starter-template.css" rel="stylesheet">
+    <link href="/css/starter-template.css" rel="stylesheet">
 
     <!-- Fancybox -->
     <link rel="stylesheet" href="/fancybox/source/jquery.fancybox.css?v=2.1.5" type="text/css" media="screen" />
@@ -29,11 +29,11 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/index.php?do=main/index">Фотогалерея</a>
+        <a class="navbar-brand" href="/main/index">Фотогалерея</a>
         <div class="nav-collapse collapse">
           <ul class="nav navbar-nav">
-            <li class="active"><a href="/index.php?do=main/index">Главная</a></li>
-            <li><a href="/index.php?do=photo/upload">Залить фото</a></li>
+            <li class="active"><a href="/main/index">Главная</a></li>
+            <li><a href="/photo/upload">Залить фото</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>
@@ -62,7 +62,7 @@
 <? else: ?>
   <div class="alert alert-danger">
     <p>Фотографий пока нет!</p>
-    <p>Можете <a href="/index.php?do=photo/upload">загрузить</a></p>
+    <p>Можете <a href="/photo/upload">загрузить</a></p>
   </div>
 <? endif; ?>
       </div>
@@ -73,7 +73,7 @@
 
 
     <script type="text/javascript" src="http://code.jquery.com/jquery-latest.min.js"></script>
-    <script src="js/bootstrap.min.js"></script>
+    <script src="/js/bootstrap.min.js"></script>
     <script type="text/javascript" src="/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
     <script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-buttons.js?v=1.0.5"></script>
     <script type="text/javascript" src="/fancybox/source/helpers/jquery.fancybox-media.js?v=1.0.6"></script>

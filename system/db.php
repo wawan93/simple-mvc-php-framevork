@@ -35,7 +35,7 @@ class Db {
 		$sql = array_shift($args);
 
 		$args = array_map(function($param) {
-			return $this->db->escape_string($param);
+			return $this->db->real_escape_string($param);
 		}, $args);
 
 		$sql = str_replace(array('%', '?'), array('%%', '%s'), $sql);

@@ -9,10 +9,10 @@
     <title>Фотогалерея</title>
 
     <!-- Bootstrap core CSS -->
-    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="/css/bootstrap.css" rel="stylesheet">
 
     <!-- Custom styles for this template -->
-    <link href="css/starter-template.css" rel="stylesheet">
+    <link href="/css/starter-template.css" rel="stylesheet">
   </head>
 
   <body>
@@ -24,11 +24,11 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <a class="navbar-brand" href="/index.php?do=main/index">Фотогалерея</a>
+        <a class="navbar-brand" href="/main/index">Фотогалерея</a>
         <div class="nav-collapse collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/index.php?do=main/index">Главная</a></li>
-            <li class="active"><a href="/index.php?do=photo/upload">Залить фото</a></li>
+            <li><a href="/main/index">Главная</a></li>
+            <li class="active"><a href="/photo/upload">Залить фото</a></li>
           </ul>
         </div><!--/.nav-collapse -->
       </div>

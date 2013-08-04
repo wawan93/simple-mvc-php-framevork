@@ -11,13 +11,13 @@
 
 	// http://gallery.loc/index.php?do=main/index
 
-	if (isset($_GET['do'])) {
-		$url = trim(strip_tags($_GET['do']));
-	} else {
-		$url = 'main/index';
-	}
+	$url = $_SERVER['REQUEST_URI'];
+	$url = explode ('/', $url);
 
-	$url = explode('/', $url);
+	// delete first '/'
+	if($url[0] == '') array_shift($url);
+	// and delete 'index.php'
+	if($url[0] == 'index.php') array_shift($url); 
 
 	$controller = array_shift($url);
 
