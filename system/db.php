@@ -1,12 +1,14 @@
 <?php if(!defined(APP)) header("HTTP/1.0 404 Not Found"); 
 
-if (MODE === 'dev') {
-	function dbg($var) {
+function dbg($var) {
+	if (MODE === 'dev') {
 		echo "<pre>";
 		var_dump($var);
 		echo "</pre>";
 		die();
-	}
+	} elseif (MODE === 'prod') {
+		die('Site is in production mode! Delete all dbg() queries!');
+	} 
 }
 
 class Db {

@@ -2,14 +2,14 @@
 	header('Content-Type: text/html; charset=utf-8', true);
 	define('SITE_ROOT', dirname(__FILE__));
 	define('APP',true);
-	define('MODE', 'dev');
+	define('MODE', 'prod');
 
 	include_once "app/config.php";
 	include_once "system/db.php";
 	include_once "system/model.php";
 	include_once "system/controller.php";
 
-	// http://gallery.loc/index.php?do=main/index
+	// http://gallery.loc/index.php/main/index
 
 	$url = $_SERVER['REQUEST_URI'];
 	$url = explode ('/', $url);
@@ -18,6 +18,13 @@
 	if($url[0] == '') array_shift($url);
 	// and delete 'index.php'
 	if($url[0] == 'index.php') array_shift($url); 
+	// and delete last ''
+	while($url[count($url)-1] === '') array_pop($url);
+
+	// if URI is '/'
+	if(count($url)==0) {
+		$url = array('main','index');
+	}
 
 	$controller = array_shift($url);
 
