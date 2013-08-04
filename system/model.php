@@ -4,7 +4,7 @@
 		protected $db;
 
 		public function __construct() {
-			$this->db = new Db();
+			$this->db = Db::get_instance();
 		}
 		
 		public function escape($data) {

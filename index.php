@@ -4,6 +4,7 @@
 	define('APP',true);
 	define('MODE', 'dev');
 
+	include_once "app/config.php";
 	include_once "system/db.php";
 	include_once "system/model.php";
 	include_once "system/controller.php";

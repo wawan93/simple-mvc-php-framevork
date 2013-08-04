@@ -11,8 +11,21 @@ if (MODE === 'dev') {
 
 class Db {
 	
-	public function __construct() {
-		$this->db = new mysqli('localhost', 'root', '123', 'gallery');
+	protected static $instance;
+
+    private function __clone() {}
+    private function __wakeup() {}
+	private function __construct() {
+		$this->db = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_BASE);
+	}
+
+	public static function get_instance() {
+		if ( !isset(self::$instance) ) {
+            $class = __CLASS__;
+            self::$instance = new $class();
+            return self::$instance;
+        }
+        return self::$instance;
 	}
 
 	public function query($sql) {
