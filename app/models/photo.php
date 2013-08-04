@@ -7,8 +7,10 @@
 
 		public function upload_photo($data) {
 			if (!$data) throw new Exception("No data", 1);
-			
+
 			$sql = "INSERT INTO photos (path, title, descr, date) VALUES ('?', '?', '?', ?);";
+			// $data['sql'] = $sql;
+			// call_user_method_array('query', $this->db, $data);
 			$this->db->query($sql, $data['path'], $data['title'], $data['descr'], $data['date']);
 		}
 	}

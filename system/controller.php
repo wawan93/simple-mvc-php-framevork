@@ -19,7 +19,7 @@
 		}
 
 		public function redirect($path) {
-			$url = 'http://' . $_SERVER['HTTP_HOST'] . '/index.php?do=' . $path;
+			$url = 'http://' . $_SERVER['HTTP_HOST'] . '/' . $path;
 			header("Location: $url");
 		}
 	}

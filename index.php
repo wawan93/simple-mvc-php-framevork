@@ -2,7 +2,7 @@
 	header('Content-Type: text/html; charset=utf-8', true);
 	define('SITE_ROOT', dirname(__FILE__));
 	define('APP',true);
-	define('MODE', 'prod');
+	define('MODE', 'dev');
 
 	include_once "app/config.php";
 	include_once "system/db.php";

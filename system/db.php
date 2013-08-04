@@ -43,6 +43,7 @@ class Db {
 		$sql = str_replace(array('%', '?'), array('%%', '%s'), $sql);
 		array_unshift($args, $sql);
 		$sql = call_user_func_array('sprintf', $args);
+
 		$this->last = $this->db->query($sql);
 		if($this->last == false) die('Database error: '. $this->db->error);
 
